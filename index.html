@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 131 – Dynamic Web Fundamentals – TAFADZWA SIBANDA</title>
+  <meta name="author" content="TAFADZWA SIBANDA">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Styles/styles.css">
+  
+
+  <!-- JavaScript -->
+  <script src="scripts/getdates.js" defer></script>
+</head>
+  <body>
+  <div class="bg-shape bg-shape1"></div>
+  <div class="bg-shape bg-shape2"></div>
+  <div class="bg-shape bg-shape3"></div>
+  <div class="bg-shape bg-shape4"></div>
+  <div class="bg-shape bg-shape5"></div>
+  <div class="bg-shape bg-shape6"></div>
+  <div class="bg-shape bg-shape7"></div>
+  <div class="bg-shape bg-shape8"></div>
+  <div class="bg-shape bg-shape9"></div>
+  <div class="bg-shape bg-shape10"></div>
+  <div class="bg-shape bg-shape11"></div>
+  <div class="bg-shape bg-shape12"></div>
+  <header>
+    <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+    <nav aria-label="Main navigation">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="LinkedIn Profile" aria-label="LinkedIn Profile">LinkedIn</a>
+      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener" title="Canvas" aria-label="Canvas">Canvas</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank" rel="noopener" title="Favorite Scripture" aria-label="Favorite Scripture">Scripture</a>
+      <a href="filtered-temples.html" title="Temple Album" aria-label="Temple Album">Temple Album</a>
+      <a href="place.html" class="active" aria-current="page">Place</a>
+      <a href="#" title="Final Project" aria-label="Final Project">Final Project</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="main-grid">
+      <!-- Top row: Profile (left), About Me (right) -->
+      <div class="profile-left">
+        <img src="images/profile.jpg" alt="Portrait of Tafadzwa Sibanda, Web Developer and Designer from Zimbabwe" class="profile-img square-img" loading="lazy">
+        <h1 class="profile-title">Tafadzwa Sibanda</h1>
+        <div id="profile-greeting" aria-live="polite" style="font-size:1.1rem; color:#00695c; margin-top:0.5rem;"></div>
+        <p class="profile-role">Web Developer & Designer | Zimbabwe</p>
+      </div>
+      <div class="about-right card">
+        <h2>About Me</h2>
+        <p>Hello! I'm Tafadzwa Sibanda, a passionate web developer and designer from Zimbabwe. I specialize in building modern, responsive websites and web applications using HTML, CSS, and JavaScript. My goal is to create digital experiences that are both beautiful and functional. I love learning new technologies and collaborating with others to solve real-world problems through code.</p>
+        <ul class="about-list">
+          <li>Strong foundation in HTML5, CSS3, and JavaScript (ES6+)</li>
+          <li>Experience with responsive design and UI/UX principles</li>
+          <li>Skilled in version control (Git) and teamwork</li>
+          <li>Enthusiastic about learning new technologies</li>
+        </ul>
+      </div>
+      <!-- Middle row: Skills (full width) -->
+      <div class="skills card">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li><strong>HTML5</strong> &amp; <strong>CSS3</strong></li>
+          <li><strong>JavaScript</strong> (ES6+)</li>
+          <li>Responsive Design</li>
+          <li>UI/UX Principles</li>
+          <li>Version Control (Git)</li>
+        </ul>
+        <p>I enjoy turning ideas into reality and always strive to write clean, maintainable code.</p>
+      </div>
+      <!-- Bottom row: Flag (left), Interests (right) -->
+      <div class="flag-bottom card">
+        <h2>Proudly Zimbabwean</h2>
+  <img src="images/Zi.jpg" alt="Zimbabwean Flag" class="flag-img fill-card-img" loading="lazy">
+        <p class="flag-text">Proudly Zimbabwean</p>
+      </div>
+      <div class="interests card">
+        <h2>My Interests</h2>
+  <img src="images/hobby.jpg" alt="Coding and Adventure - Tafadzwa Sibanda" class="fill-card-img" loading="lazy">
+        <p>Outside of coding, I love reading, exploring new places, and sharing knowledge with others. I believe in lifelong learning and the power of technology to make a positive impact.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="currentyear"></span> | Tafadzwa Sibanda | Zimbabwe
+    </p>
+    <p id="lastModified"></p>
+    <p class="copyright-text">All content &copy; Tafadzwa Sibanda. All rights reserved.</p>
+  </footer>
+  <script>
+    // Dynamic greeting
+    function getGreeting() {
+      const hour = new Date().getHours();
+      if (hour < 12) return "Good morning";
+      if (hour < 18) return "Good afternoon";
+      return "Good evening";
+    }
+    const greetingDiv = document.getElementById('profile-greeting');
+    if (greetingDiv) {
+      greetingDiv.textContent = getGreeting() + '!';
+    }
+  </script>
+</body>
+</html>

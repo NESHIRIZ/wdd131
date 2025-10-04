@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Confirmation</title>
+  <link rel="stylesheet" href="Styles/form.css">
+  <!-- Confetti JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="Script/review.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Thank You for Your Review!</h1>
+  </header>
+
+  <main>
+    <section class="form-card" style="text-align:center;">
+      <div id="review-greeting" style="color:#43cea2; font-size:1.1rem; margin-bottom:0.5rem;"></div>
+      <div style="font-size:2.5rem; margin-bottom:0.5rem;" aria-hidden="true">🎉</div>
+      <h2 style="margin-top:0; color:var(--primary-color);">Thank you for submitting!</h2>
+      <p style="font-size:1.1rem;">Your product review has been <b>successfully submitted</b>.</p>
+      <p style="font-size:1.1rem;">You have submitted <span id="reviewCount">0</span> review(s) so far.</p>
+      <div style="margin:1.5rem 0;">
+        <span style="font-size:1.5rem; color:var(--secondary-color);" aria-label="Five stars">🌟🌟🌟🌟🌟</span>
+      </div>
+      <a href="form.html" class="back-button" style="display:inline-block; margin-top:1rem; padding:0.7rem 1.5rem; background:linear-gradient(90deg, var(--secondary-color), var(--primary-color)); color:#fff; border-radius:2rem; text-decoration:none; font-weight:bold; transition:background 0.3s;">Submit Another Review</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> | BYU-I | WDD 131</p>
+  </footer>
+  <script>
+    // Footer year
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
+    // Dynamic greeting for celebration
+    function getGreeting() {
+      const hour = new Date().getHours();
+      if (hour < 12) return "Good morning! Your feedback makes a difference.";
+      if (hour < 18) return "Good afternoon! Thanks for helping us improve.";
+      return "Good evening! We appreciate your review.";
+    }
+    const greetDiv = document.getElementById('review-greeting');
+    if (greetDiv) {
+      greetDiv.textContent = getGreeting();
+    }
+  </script>
+</body>
+</html>
+

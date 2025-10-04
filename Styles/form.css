@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap');
+:root {
+  --primary-color: #185a9d;
+  --secondary-color: #43cea2;
+  --background-light: #e0eafc;
+  --background-gradient: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  --text-dark: #222;
+  --text-light: #fff;
+  --shadow-color: rgba(24, 90, 157, 0.15);
+}
+
+/* General Body */
+body {
+  font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background-gradient);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: var(--text-light);
+  text-align: center;
+  padding: 2rem 1rem 1.5rem 1rem;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  box-shadow: 0 4px 24px var(--shadow-color);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+/* Form Card */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 70vh;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.form-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px var(--shadow-color);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  margin: 2rem auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.form-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(24, 90, 157, 0.18);
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: var(--primary-color);
+}
+
+legend {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+}
+
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid #b5c6d3;
+  font-size: 1rem;
+  background: #f8fafc;
+  margin-bottom: 0.5rem;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 0 0 2px #43cea2;
+  outline: none;
+}
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border: 1.5px solid var(--secondary-color);
+  outline: none;
+}
+
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: var(--secondary-color);
+}
+
+input[type="submit"] {
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: var(--text-light);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(67, 206, 162, 0.10);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+input[type="submit"]:focus {
+  box-shadow: 0 0 0 3px #43cea2;
+}
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px #43cea233;
+}
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  transform: scale(1.03);
+}
+
+span {
+  color: #e53935;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1.2rem 0 0.5rem 0;
+  color: var(--text-light);
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+  box-shadow: 0 -4px 24px var(--shadow-color);
+  font-size: 1.08rem;
+}
+
+/* Fieldset */
+fieldset {
+  border: none;
+  padding: 0.5rem 0 0.5rem 0;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-card {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+  main {
+    margin: 1.2rem 0 0.5rem 0;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
+}

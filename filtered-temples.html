@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtered Temple Album – Tafadzwa Sibanda</title>
+  <meta name="author" content="Tafadzwa Sibanda">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Styles/filtered-temple.css">
+
+  <!-- JavaScript -->
+  <script src="Script/filtered-temple.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Filtered Temple Album</h1>
+    <button id="menu" aria-label="Menu" tabindex="0">☰</button>
+    <nav class="navigation" aria-label="Temple Album Navigation">
+      <a href="#" data-filter="all" aria-label="Show all temples">Home</a>
+      <a href="#" data-filter="old" aria-label="Show old temples">Old</a>
+      <a href="#" data-filter="new" aria-label="Show new temples">New</a>
+      <a href="#" data-filter="large" aria-label="Show large temples">Large</a>
+      <a href="#" data-filter="small" aria-label="Show small temples">Small</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Temples</h1>
+    <div id="greeting" style="text-align:center; color:#43cea2; font-size:1.1rem; margin-bottom:1rem;"></div>
+    <section id="temple-cards" class="album">
+      <!-- Temple cards will be inserted here dynamically -->
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="currentyear"></span> | Tafadzwa Sibanda | Zimbabwe
+    </p>
+    <p id="lastModified"></p>
+  </footer>
+  <script>
+    // Dynamic greeting for user engagement
+    function getGreeting() {
+      const hour = new Date().getHours();
+      if (hour < 12) return "Good morning! Explore these beautiful temples.";
+      if (hour < 18) return "Good afternoon! Enjoy the temple album.";
+      return "Good evening! Discover temples from around the world.";
+    }
+    const greetDiv = document.getElementById('greeting');
+    if (greetDiv) {
+      greetDiv.textContent = getGreeting();
+    }
+  </script>
+</body>
+</html>
+
