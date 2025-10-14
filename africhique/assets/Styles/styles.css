@@ -1,0 +1,168 @@
+:root{
+  --green:#0f3d2e; /* dark green */
+  --green-2:#145c41;
+  --black:#111;
+  --white:#fff;
+  --gold:#d4af37;
+  --muted:#f7f8f7;
+  --ring:0 0 0 3px rgba(212,175,55,.35);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65;color:var(--black);background:var(--white)}
+img{max-width:100%;display:block}
+.container{width:min(1100px,92%);margin-inline:auto}
+.serif{font-family:"Libre Baskerville", Georgia, serif}
+
+/* Accessibility */
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:var(--gold);color:var(--black);padding:.5rem .75rem;border-radius:.5rem;z-index:1000}
+
+/* Topbar / Nav (LDS clean, African accents) */
+.topbar{position:sticky;top:0;z-index:50;background:var(--green);color:var(--white);box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--white)}
+.logo{width:44px;height:auto;border-radius:12px;box-shadow:0 0 0 3px rgba(255,255,255,.08)}
+.brand-text{font-weight:700;letter-spacing:.4px}
+.nav{position:fixed;inset:0 auto auto 0;right:0;background:var(--green);transform:translateY(-120%);transition:transform .3s ease}
+.nav ul{list-style:none;margin:0;padding:4.5rem 1.25rem 1.25rem;display:grid;gap:.5rem}
+.nav a{color:var(--white);text-decoration:none;padding:.6rem .75rem;border-radius:.6rem;font-weight:500}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.15)}
+.nav[aria-expanded="true"]{transform:translateY(0)}
+.nav-toggle{display:inline-flex;flex-direction:column;gap:4px;background:transparent;border:none;cursor:pointer}
+.nav-toggle .nav-toggle-bar{width:26px;height:3px;background:var(--white);border-radius:2px}
+.cart-link{display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;color:var(--white);font-weight:600}
+.cart-count{background:var(--gold);color:var(--black);padding:.15rem .5rem;border-radius:999px;min-width:1.5rem;text-align:center}
+
+@media(min-width:860px){
+  .nav{position:static;transform:none;background:transparent}
+  .nav ul{display:flex;gap:1rem;padding:0}
+  .nav-toggle{display:none}
+}
+
+/* Hero: LDS calm + African pattern */
+.hero{
+  position:relative;min-height:74vh;display:grid;place-items:center;overflow:hidden;
+  background:
+    linear-gradient(135deg, rgba(15,61,46,.93), rgba(20,92,65,.93)), 
+    
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(255,255,255,.08) 0 40%, transparent 40%),
+    radial-gradient(ellipse at 90% 10%, rgba(0,0,0,.12) 0 35%, transparent 35%),
+    repeating-linear-gradient(45deg, rgba(212,175,55,.15) 0 8px, transparent 8px 16px);
+  mix-blend: overlay;
+}
+.hero-content{position:relative;text-align:center;color:var(--white);padding:3rem 0}
+.hero-title{font-family:"Libre Baskerville", Georgia, serif;font-size:clamp(2rem,5vw,3.25rem);margin:0 0 .5rem}
+.hero-subtitle{max-width:720px;margin-inline:auto;opacity:.95}
+.hero-cta{margin-top:1.25rem;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+
+html, body{
+    height:100%;
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background: url('../images/hero-image.jpg')no-repeat center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before{
+    content:"";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(15,61,75,0.5);/* adjust color and opacity for overlay */ z-index: -1;
+}
+/* Buttons */
+.btn{display:inline-block;border:none;padding:.75rem 1.1rem;border-radius:.8rem;cursor:pointer;font-weight:600;text-decoration:none}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:focus{outline:var(--ring)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.85)}
+.btn-outline:hover{background:rgba(255,255,255,.1)}
+
+/* Sections */
+.section{padding:3rem 0}
+.section-head{text-align:center;margin-bottom:1.5rem}
+.section-title{font-family:"Libre Baskerville", Georgia, serif;margin:0}
+
+/* Grids */
+.grid{display:grid;gap:1rem}
+.cards-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.features{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.about-grid{grid-template-columns:1.2fr .8fr;gap:2rem}
+@media(max-width:800px){.about-grid{grid-template-columns:1fr}}
+
+/* Cards */
+.card{background:var(--white);border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.05)}
+.card-media img{aspect-ratio:4/3;object-fit:cover}
+.card-body{padding:1rem}
+.card-title{margin:.2rem 0 .4rem 0}
+.card-desc{color:#444}
+.card-meta{display:flex;align-items:center;justify-content:space-between;margin-top:.7rem}
+.price{font-weight:700;color:var(--green)}
+.btn-add{background:var(--green);color:var(--white)}
+.btn-add:hover{background:var(--green-2)}
+
+/* Pattern band (African feel) */
+.pattern-band{background:
+  linear-gradient(0deg, rgba(20,92,65,.06), rgba(20,92,65,.06)),
+  repeating-linear-gradient(135deg, rgba(212,175,55,.12) 0 12px, transparent 12px 24px),
+  #fff;
+  border-block:6px solid var(--green);
+}
+.band-inner{padding:2rem 0;text-align:center}
+.band-inner h3{margin:0}
+
+/* Page hero small */
+.page-hero.small{background:linear-gradient(120deg, #123f30, #1a5b44);color:#fff;padding:3rem 0}
+.page-hero .container p{opacity:.95}
+
+/* Forms */
+.form label{display:block;font-weight:600;margin:.6rem 0 .3rem}
+.form input,.form textarea,.select,.input{
+  width:100%;padding:.7rem .8rem;border-radius:.6rem;border:1px solid #e1e1e1;background:#fff
+}
+.form input:focus,.form textarea:focus,.select:focus,.input:focus{outline:var(--ring)}
+.form-hint{font-size:.9rem;color:#555}
+.full{width:100%}
+
+/* Toolbar */
+.toolbar{display:flex;gap:.6rem;align-items:center;justify-content:flex-end;margin-bottom:1rem;flex-wrap:wrap}
+
+/* Order layout */
+.order-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem}
+.cart{border:1px solid #e8e8e8;border-radius:16px;padding:1rem;background:#fff}
+.cart-items{display:grid;gap:.6rem}
+.cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:.75rem;align-items:center;border:1px solid #eee;border-radius:12px;padding:.5rem;background:#fafafa}
+.cart-item img{width:64px;height:48px;object-fit:cover;border-radius:8px}
+.cart-summary{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;font-weight:700}
+.order-form{border:1px solid #e8e8e8;border-radius:16px;padding:1rem;background:#fff}
+@media(max-width:960px){.order-wrap{grid-template-columns:1fr}}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.map-embed iframe{width:100%;height:280px;border:0}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+
+/* Footer */
+.site-footer{background:var(--green);color:#fff;margin-top:2rem}
+.footer-grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding:2rem 0}
+.footer-links{list-style:none;margin:0;padding:0}
+.footer-links a{color:#fff;text-decoration:none}
+.footer-links a:hover{text-decoration:underline}
+.newsletter{display:flex;gap:.5rem;flex-wrap:wrap}
+.newsletter input{flex:1}
+.socials{display:flex;gap:.8rem;margin-top:.6rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding:.8rem 0;text-align:center}
+
+/* Utilities */
+.visually-hidden{position:absolute !important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}

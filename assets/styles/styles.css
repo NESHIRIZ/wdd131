@@ -1,0 +1,295 @@
+/* ------------------------------ */
+/* Seko's Flowers - main stylesheet */
+/* ------------------------------ */
+:root {
+  --lime: #9edc5b;      /* primary lime shade */
+  --lime-dark: #6fb53f; /* darker lime shade */
+  --white: #fdfdfd;     /* soft white */
+  --text: #222;
+  --container-left: 20cm; /* hero and header left margin */
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------ */
+/* BODY with background + overlay */
+/* ------------------------------ */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+
+  /* FIXED PATH – one level up from /assets/styles/ */
+  background: url('../images/background.jpg') center/cover no-repeat fixed;
+}
+
+/* Whitish transparent overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35); /* light haze */
+  z-index: 0;
+}
+
+/* Keep all page content above overlay */
+body * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------------ */
+/* HEADER */
+/* ------------------------------ */
+.site-header {
+  background: var(--white);
+  border-bottom: 2px solid var(--lime);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;           /* vertical align nav with logo */
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin-left: 2cm;             /* align with products and page content */
+}
+
+/* Logo - big and animated */
+.header-inner .logo img {
+  height: 120px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Hover scale effect */
+.header-inner .logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Floating animation for logo */
+@keyframes floatLogo {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.header-inner .logo img.animate {
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+/* Main navigation */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: var(--lime-dark);
+  text-decoration: none;
+  font-weight: 600;
+  padding: .5rem .75rem;
+  transition: color .2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--lime);
+}
+
+/* ------------------------------ */
+/* BUTTONS */
+/* ------------------------------ */
+.btn {
+  display: inline-block;
+  padding: .5rem .9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn.primary {
+  background: var(--lime);
+  color: var(--white);
+}
+.btn.primary:hover {
+  background: var(--lime-dark);
+}
+.btn.ghost {
+  background: transparent;
+  border: 2px solid var(--lime-dark);
+  color: var(--lime-dark);
+}
+.btn.ghost:hover {
+  background: var(--lime-dark);
+  color: var(--white);
+}
+.btn.small {
+  padding: .35rem .6rem;
+  font-size: .9rem;
+}
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--lime-dark);
+  color: var(--lime-dark);
+}
+.btn.outline:hover {
+  background: var(--lime-dark);
+  color: var(--white);
+}
+
+/* ------------------------------ */
+/* PAGE WRAPPER */
+/* ------------------------------ */
+.page-inner {
+  margin-left: var(--container-left);
+  padding: 2rem;
+  color: var(--text);
+}
+.page-inner h2,
+.page-inner h3 {
+  color: var(--lime-dark);
+}
+
+/* ------------------------------ */
+/* PRODUCTS GRID */
+/* ------------------------------ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-auto-rows: auto;
+  gap: 1.25rem;
+  padding: 2rem 2rem 2rem 2cm; /* top, right, bottom, left */
+}
+
+.product-card {
+  background: var(--white);
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-media img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 1rem;
+}
+.product-body h3 {
+  margin: 0 0 .5rem;
+  color: var(--lime-dark);
+}
+.price {
+  font-weight: 700;
+  color: var(--lime);
+}
+.product-actions {
+  display: flex;
+  gap: .5rem;
+  margin-top: .75rem;
+}
+
+/* ------------------------------ */
+/* FOOTER */
+/* ------------------------------ */
+.site-footer {
+  background: var(--lime-dark);
+  color: var(--white);
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+.footer-links h4 {
+  margin: 0 0 .5rem;
+  color: var(--white);
+}
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.footer-social img {
+  height: 24px;
+  width: 24px;
+  transition: transform .2s ease;
+}
+.footer-social a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-small {
+  margin-top: 1rem;
+  color: #f0f0f0;
+  font-size: .9rem;
+}
+
+/* ------------------------------ */
+/* RESPONSIVE BREAKPOINTS */
+/* ------------------------------ */
+@media (max-width:1200px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 2cm;
+  }
+}
+
+@media (max-width:900px) {
+  :root { --container-left: 3rem; }
+  .hero-content h1 { font-size: 2rem; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .products-grid { margin-left: 0; }
+  .page-inner { margin-left: 0; }
+}
+
+@media (max-width:768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+  }
+}
+
+/* ------------------------------ */
+/* ACCESSIBILITY */
+/* ------------------------------ */
+a:focus,
+button:focus {
+  outline: 3px solid rgba(158,220,91,0.6);
+  outline-offset: 2px;
+}

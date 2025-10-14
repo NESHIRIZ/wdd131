@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Zimbabwe - Victoria Falls</title>
+  
+  
+  <link rel="stylesheet" href="Styles/place.css">
+  
+  <script src="Script/place.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Discover Zimbabwe</h1>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-label="Home">Home</a>
+      <a href="place.html" class="active" aria-current="page">Place</a>
+      <a href="temples.html" aria-label="Temples">Temples</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <picture>
+      <source srcset="images/Victoriafalls - large.webp" media="(min-width: 900px)">
+      <source srcset="images/Victoriafalls - medium.webp" media="(min-width: 600px)">
+      <img src="images/Victoriafalls - small.webp" alt="Aerial view of Victoria Falls, Zimbabwe" loading="lazy">
+    </picture>
+    <h2 class="hero-title">Victoria Falls</h2>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="grid">
+    <section class="card about">
+      <h2>About</h2>
+      <p>Zimbabwe is a land of natural wonders, and <strong>Victoria Falls</strong> is among the most spectacular. Known as "The Smoke that Thunders," it is one of the largest waterfalls in the world.</p>
+    </section>
+
+    <section class="card weather">
+      <h2>Weather</h2>
+      <!-- Live SVG icon -->
+      <span id="weather-icon" aria-label="Weather icon" class="mobile-icon" style="display:inline-block;vertical-align:middle;"></span>
+      <ul>
+        <li>Temperature: <span id="temperature">18</span> °C</li>
+        <li>Wind Speed: <span id="windspeed">10</span> km/h</li>
+        <li>Wind Chill: <span id="windchill">N/A</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> | Discover Zimbabwe</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+  <script>
+    // Dynamic greeting for fun
+    function getGreeting() {
+      const hour = new Date().getHours();
+      if (hour < 12) return "Good morning";
+      if (hour < 18) return "Good afternoon";
+      return "Good evening";
+    }
+    const aboutSection = document.querySelector('.about h2');
+    if (aboutSection) {
+      const greet = document.createElement('div');
+      greet.textContent = getGreeting() + ' from Zimbabwe!';
+      greet.style.fontSize = '1.1rem';
+      greet.style.color = '#43cea2';
+      greet.style.marginBottom = '0.5rem';
+      aboutSection.parentNode.insertBefore(greet, aboutSection.nextSibling);
+    }
+  </script>
+</body>
+</html>

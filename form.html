@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Review Form</title>
+  <link rel="stylesheet" href="Styles/form.css">
+  <script src="Script/form.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Product Review Form</h1>
+  </header>
+
+  <main>
+    <section class="form-card">
+      <div id="form-greeting" style="text-align:center; color:#43cea2; font-size:1.1rem; margin-bottom:1rem;"></div>
+      <form id="reviewForm" action="review.html" method="get" aria-label="Product Review Form">
+        <!-- Product Name -->
+        <label for="product">Product Name <span>*</span></label>
+        <select id="product" name="product" required aria-required="true">
+          <option disabled selected>Select a Product ...</option>
+        </select>
+        <!-- Overall Rating -->
+        <fieldset aria-labelledby="rating-legend">
+          <legend id="rating-legend">Overall Rating <span>*</span></legend>
+          <label><input type="radio" name="rating" value="1" required aria-required="true"> 1</label>
+          <label><input type="radio" name="rating" value="2"> 2</label>
+          <label><input type="radio" name="rating" value="3"> 3</label>
+          <label><input type="radio" name="rating" value="4"> 4</label>
+          <label><input type="radio" name="rating" value="5"> 5</label>
+        </fieldset>
+        <!-- Date of Installation -->
+        <label for="date">Date of Installation <span>*</span></label>
+        <input type="date" id="date" name="date" required aria-required="true">
+        <!-- Useful Features -->
+        <fieldset>
+          <legend>Useful Features</legend>
+          <label><input type="checkbox" name="features" value="Feature1"> Feature 1</label>
+          <label><input type="checkbox" name="features" value="Feature2"> Feature 2</label>
+          <label><input type="checkbox" name="features" value="Feature3"> Feature 3</label>
+        </fieldset>
+        <!-- Written Review -->
+        <label for="review">Written Review</label>
+        <textarea id="review" name="review" rows="4" aria-label="Written Review"></textarea>
+        <!-- User Name -->
+        <label for="username">Your Name</label>
+        <input type="text" id="username" name="username" aria-label="Your Name">
+        <!-- Submit Button -->
+        <input type="submit" value="Submit Review">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> | BYU-I | WDD 131</p>
+  </footer>
+  <script>
+    // Dynamic Footer Year
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
+    // Dynamic greeting for user engagement
+    function getGreeting() {
+      const hour = new Date().getHours();
+      if (hour < 12) return "Good morning! Please review your product.";
+      if (hour < 18) return "Good afternoon! Share your experience.";
+      return "Good evening! Leave a review before you go.";
+    }
+    const greetDiv = document.getElementById('form-greeting');
+    if (greetDiv) {
+      greetDiv.textContent = getGreeting();
+    }
+  </script>
+</body>
+</html>
+

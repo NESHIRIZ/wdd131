@@ -1,0 +1,530 @@
+/* Professional, modern, and responsive styles for Seko's Flowers */
+
+/* Add gold accent color and elegant green palette */
+:root {
+  --primary-green: #3ca35c;
+  --light-green: #eaffea;
+  --lemon-green: #b6ffb6;
+  --accent-gold: #FFD700;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(135deg, #eaffea 0%, #d4ffc7 100%);
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #b6ffb6 0%, #eaffea 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1rem 0 0.5rem 0;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: var(--primary-green);
+  margin: 0 1rem;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 8px var(--accent-gold);
+}
+
+nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav a {
+  font-weight: 700;
+  color: #3ca35c;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
+  transition: background 0.3s, color 0.3s;
+  font-size: 1.1rem;
+}
+
+nav a.active,
+nav a:hover {
+  background: #eaffea;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(60,163,92,0.08);
+}
+
+.header-svg {
+  position: absolute;
+  right: 2rem;
+  top: 0.5rem;
+  z-index: 1;
+}
+
+.header-svg circle:first-child {
+  fill: var(--lemon-green);
+}
+.header-svg circle:last-child {
+  fill: var(--light-green);
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem 1rem;
+  background: linear-gradient(90deg, #eaffea 0%, #b6ffb6 100%);
+  margin-bottom: 2rem;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 4px 16px rgba(215,38,96,0.05);
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #3ca35c;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.hero button {
+  background: var(--primary-green);
+  color: #fff;
+  border: 2px solid var(--accent-gold);
+  padding: 0.8rem 2rem;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(215,38,96,0.12);
+  transition: background 0.3s;
+}
+
+.hero button:hover {
+  background: var(--accent-gold);
+  color: var(--primary-green);
+}
+
+/* Flower Gallery (index.html) */
+.flower-gallery {
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(60,163,92,0.07);
+}
+
+.flower-gallery h2 {
+  text-align: center;
+  color: #3ca35c;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.flower-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.flower-card {
+  min-width: 280px;
+  background: linear-gradient(135deg, #eaffea 0%, #b6ffb6 100%);
+  border-radius: 24px;
+  box-shadow: 0 2px 12px rgba(60,163,92,0.10);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.flower-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(60,163,92,0.18);
+}
+
+.flower-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(215,38,96,0.08);
+  animation: floatImage 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-12px);}
+}
+
+.flower-card h3 {
+  font-family: 'Pacifico', cursive;
+  color: var(--primary-green);
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+  border-bottom: 2px solid var(--accent-gold);
+  padding-bottom: 0.3rem;
+}
+
+.flower-card p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Portfolio Gallery (portfolio.html) */
+.portfolio-section {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(60,163,92,0.07);
+}
+
+.portfolio-section h2 {
+  text-align: center;
+  color: #3ca35c;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-gallery {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-card {
+  width: 280px;
+  background: linear-gradient(135deg, #eaffea 0%, #b6ffb6 100%);
+  border-radius: 24px;
+  box-shadow: 0 2px 12px rgba(60,163,92,0.10);
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: transform 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(60,163,92,0.18);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(215,38,96,0.08);
+  animation: floatImage 3s ease-in-out infinite alternate;
+}
+
+.portfolio-card h3 {
+  font-family: 'Pacifico', cursive;
+  color: var(--primary-green);
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  border-bottom: 2px solid var(--accent-gold);
+  padding-bottom: 0.3rem;
+}
+
+.portfolio-card p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Products Gallery (product.html) */
+.products-section {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(60,163,92,0.07);
+}
+
+.products-section h2 {
+  text-align: center;
+  color: #3ca35c;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.products-gallery {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  width: 280px;
+  background: linear-gradient(135deg, #eaffea 0%, #b6ffb6 100%);
+  border-radius: 24px;
+  box-shadow: 0 2px 12px rgba(60,163,92,0.10);
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(60,163,92,0.18);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(215,38,96,0.08);
+  animation: floatImage 3s ease-in-out infinite alternate;
+}
+
+.product-card h3 {
+  font-family: 'Pacifico', cursive;
+  color: var(--primary-green);
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  border-bottom: 2px solid var(--accent-gold);
+  padding-bottom: 0.3rem;
+}
+
+.product-card p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-card .price {
+  display: block;
+  font-weight: 700;
+  color: #2b7a3a;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Contact Page */
+.contact-section {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(60,163,92,0.07);
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #3ca35c;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.contact-form label {
+  font-weight: 700;
+  color: #3ca35c;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.7rem;
+  border-radius: 12px;
+  border: 1px solid #eaffea;
+  font-size: 1rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #f6fff6;
+  resize: vertical;
+}
+
+.contact-form button {
+  background: #3ca35c;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(215,38,96,0.12);
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #2b7a3a;
+}
+
+.contact-info {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.contact-info h3 {
+  color: #3ca35c;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+.contact-info .socials {
+  margin-bottom: 1rem;
+}
+
+/* References Page */
+.references-section {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(60,163,92,0.07);
+  text-align: left;
+}
+
+.references-section h2 {
+  color: #3ca35c;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.reference-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.reference-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.reference-list a {
+  color: #3ca35c;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.reference-list a:hover {
+  color: #2b7a3a;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #b6ffb6 0%, #eaffea 100%);
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -2px 12px rgba(60,163,92,0.07);
+  margin-top: 2rem;
+}
+
+footer .socials {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+footer .socials a {
+  color: #3ca35c;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+footer .socials a:hover {
+  color: #2b7a3a;
+  text-decoration: underline;
+}
+
+footer .copyright {
+  margin-top: 1rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .flower-gallery,
+  .portfolio-section,
+  .products-section,
+  .contact-section,
+  .references-section {
+    padding: 1rem;
+  }
+  .flower-container,
+  .portfolio-gallery,
+  .products-gallery {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .flower-card,
+  .portfolio-card,
+  .product-card {
+    min-width: 220px;
+    width: 90vw;
+    padding: 0.7rem;
+  }
+  .flower-card img,
+  .portfolio-card img,
+  .product-card img {
+    height: 120px;
+  }
+}
